@@ -1,4 +1,7 @@
-package modelo;
+package curso.java.alura.modelo;
+
+import curso.java.alura.excecoes.SaldoInsuficienteException;
+import curso.java.alura.excecoes.ValorNegativoException;
 
 public abstract class Conta {
     protected double saldo;
@@ -18,20 +21,20 @@ public abstract class Conta {
         return this.saldo;
     }
 
-    public abstract void deposita(double valor) throws excecoes.ValorNegativoException;
+    public abstract void deposita(double valor) throws ValorNegativoException;
 
     public void saca(double valor) {
         if (this.saldo < valor) {
-            throw new excecoes.SaldoInsuficienteException("Saldo insuficiente! Saldo: R$"  + this.saldo + ". Valor de Saque: R$" + valor);
+            throw new SaldoInsuficienteException("Saldo insuficiente! Saldo: R$" + this.saldo + ". Valor de Saque: R$" + valor);
         }
         this.saldo -= valor;
     }
 
     public void transfere(double valor, Conta destino) {
         this.saca(valor);
-        try{
+        try {
             destino.deposita(1000);
-        }catch(excecoes.ValorNegativoException ex){
+        } catch (ValorNegativoException ex) {
             System.out.println("Não é possível depositar valores iguais ou menores que 0!");
         }
     }

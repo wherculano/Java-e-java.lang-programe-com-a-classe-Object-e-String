@@ -1,4 +1,6 @@
-package modelo;
+package curso.java.alura.modelo;
+
+import curso.java.alura.excecoes.ValorNegativoException;
 
 public class ContaCorrente extends Conta implements Tributavel {
 
@@ -13,9 +15,9 @@ public class ContaCorrente extends Conta implements Tributavel {
     }
 
     @Override
-    public void deposita(double valor) throws excecoes.ValorNegativoException {
+    public void deposita(double valor) throws ValorNegativoException {
         if (valor <= 0) {
-            throw new excecoes.ValorNegativoException("Não é possível depositar valor menor ou igual a 0");
+            throw new ValorNegativoException("Não é possível depositar valor menor ou igual a 0");
         }
         this.saldo += valor;
     }

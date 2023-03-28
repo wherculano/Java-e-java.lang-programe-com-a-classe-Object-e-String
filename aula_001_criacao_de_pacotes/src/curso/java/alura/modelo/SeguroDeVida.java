@@ -1,4 +1,4 @@
-package modelo;
+package curso.java.alura.modelo;
 
 public class SeguroDeVida implements Tributavel {
 
