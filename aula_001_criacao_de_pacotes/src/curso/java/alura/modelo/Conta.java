@@ -17,6 +17,12 @@ public abstract class Conta {
 
     private static int total;
 
+    /**
+     * Construtor para inicializar o objeto Conta
+     *
+     * @param agencia
+     * @param numero
+     */
     public Conta(int agencia, int numero) {
         this.agencia = agencia;
         this.numero = numero;
@@ -28,6 +34,11 @@ public abstract class Conta {
         return this.saldo;
     }
 
+    /**
+     * Valor não pode ser menor ou igual a zero.
+     * @param valor
+     * @throws ValorNegativoException
+     */
     public abstract void deposita(double valor) throws ValorNegativoException;
 
     public void saca(double valor) {
