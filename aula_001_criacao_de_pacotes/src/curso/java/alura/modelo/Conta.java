@@ -4,6 +4,13 @@ import curso.java.alura.excecoes.SaldoInsuficienteException;
 import curso.java.alura.excecoes.ValorNegativoException;
 
 public abstract class Conta {
+    /*
+     * private: disponível somente dentro da classe;
+     * protected: disponível apenas para filhos (herança);
+     * sem modificador de acesso (package private): disponível somente no pacote;
+     * public: disponível para todos.
+     */
+
     protected double saldo;
     private int agencia;
     private int numero;
